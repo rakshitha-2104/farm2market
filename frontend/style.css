@@ -1,0 +1,511 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f7f3;
+    color: #263326;
+    padding-bottom: 80px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.top-header {
+    background: linear-gradient(135deg, #16843a, #2e9d50);
+    color: white;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.top-header h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.top-header p {
+    margin: 5px 0 0;
+    font-size: 13px;
+}
+
+.online {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+    padding: 15px;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome {
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.welcome h2 {
+    color: #237b38;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    color: #667066;
+    font-size: 14px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    background: white;
+    padding: 18px;
+    margin-bottom: 15px;
+    border-radius: 18px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    color: #287c3b;
+    margin-top: 0;
+    font-size: 20px;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 14px;
+    margin: 7px 0;
+    border: 1px solid #d4ddd4;
+    border-radius: 12px;
+    font-size: 16px;
+    background: white;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #2e8b45;
+    box-shadow: 0 0 0 3px rgba(46, 139, 69, 0.1);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    margin-top: 9px;
+    background: #2e8b45;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #206d34;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   REGISTRATION MESSAGE
+========================= */
+
+#registrationMessage {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   MARKETPLACE
+========================= */
+
+.produce-item {
+    background: #f1f8f2;
+    padding: 14px;
+    border-radius: 12px;
+    margin-top: 10px;
+    border-left: 5px solid #2e8b45;
+}
+
+.produce-item strong {
+    color: #206d34;
+}
+
+
+/* =========================
+   NEARBY MARKETS
+========================= */
+
+.market-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid #eeeeee;
+    gap: 10px;
+}
+
+.market-item:last-child {
+    border-bottom: none;
+}
+
+.market-item strong {
+    font-size: 16px;
+}
+
+.market-item p {
+    margin: 5px 0 0;
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* IMPORTANT:
+   Small View button
+*/
+
+.market-item .small-button {
+    width: auto;
+    min-width: 75px;
+    padding: 9px 16px;
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/* =========================
+   PRICE DASHBOARD
+========================= */
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.price-box {
+    background: #f2f8f2;
+    padding: 15px 8px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.price-box span {
+    font-size: 25px;
+}
+
+.price-box h3 {
+    font-size: 13px;
+    margin: 8px 0;
+}
+
+.price-box strong {
+    color: #22843b;
+    font-size: 17px;
+}
+
+
+/* =========================
+   WEATHER
+========================= */
+
+.alert-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f0f4f7;
+    padding: 15px;
+    border-radius: 14px;
+}
+
+.weather-icon {
+    font-size: 38px;
+}
+
+.alert-box h3 {
+    margin: 0 0 5px;
+}
+
+.alert-box p {
+    margin: 0;
+    color: #666;
+    font-size: 13px;
+}
+
+
+/* =========================
+   DEMAND FORECAST
+========================= */
+
+.forecast {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.forecast > div {
+    background: #f5f8f5;
+    padding: 14px 8px;
+    text-align: center;
+    border-radius: 14px;
+}
+
+.forecast span {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.forecast strong {
+    display: block;
+}
+
+.forecast p {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.high {
+    color: #18853a;
+    font-weight: bold;
+}
+
+.medium {
+    color: #d18a00;
+    font-weight: bold;
+}
+
+
+/* =========================
+   ADVISORY
+========================= */
+
+.advisory {
+    background: #f5f9f5;
+    border-radius: 14px;
+    padding: 12px;
+}
+
+.advisory p {
+    padding: 8px;
+    margin: 0;
+}
+
+
+/* =========================
+   TRUST
+========================= */
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.trust-grid > div {
+    text-align: center;
+    background: #f5f8f5;
+    padding: 14px 5px;
+    border-radius: 14px;
+}
+
+.trust-grid span {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+.trust-grid strong {
+    font-size: 13px;
+}
+
+.trust-grid p {
+    font-size: 11px;
+    color: #777;
+}
+
+
+/* =========================
+   AI
+========================= */
+
+.ai-card {
+    background: linear-gradient(135deg, #e9f7ec, #ffffff);
+}
+
+.small-text {
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* =========================
+   BOTTOM NAVIGATION
+========================= */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+}
+
+.bottom-nav button {
+    background: white;
+    color: #555;
+    border-radius: 0;
+    margin: 0;
+    padding: 9px 3px;
+    font-size: 20px;
+}
+
+.bottom-nav button:hover {
+    background: #f1f8f2;
+    color: #22843b;
+}
+
+.bottom-nav span {
+    display: block;
+    font-size: 10px;
+    margin-top: 3px;
+}
+
+
+/* =========================
+   MOBILE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+
+    .top-header {
+        padding: 14px;
+    }
+
+    .top-header h1 {
+        font-size: 20px;
+    }
+
+    .top-header p {
+        font-size: 11px;
+    }
+
+    .online {
+        font-size: 11px;
+        padding: 6px 9px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+
+    .price-grid,
+    .forecast,
+    .trust-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .price-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px;
+    }
+
+    .price-box h3 {
+        margin: 0;
+    }
+
+    .price-box span {
+        font-size: 22px;
+    }
+
+    .market-item {
+        padding: 13px 0;
+    }
+
+    .market-item strong {
+        font-size: 14px;
+    }
+
+    .market-item p {
+        font-size: 12px;
+    }
+
+    .market-item .small-button {
+        min-width: 65px;
+        padding: 9px 12px;
+    }
+
+    input,
+    select,
+    button {
+        font-size: 15px;
+    }
+
+    .welcome h2 {
+        font-size: 20px;
+    }
+}

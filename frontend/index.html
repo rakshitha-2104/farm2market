@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Farm2Market</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="top-header">
+        <div>
+            <h1>🌾 Farm2Market</h1>
+            <p>Direct Market Access for Farmers</p>
+        </div>
+
+        <div class="online">
+            🟢 Online
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <!-- WELCOME -->
+        <section class="welcome">
+            <h2 id="welcomeTitle">Welcome to Farm2Market 👨‍🌾</h2>
+            <p>Sell your crops directly and get better market opportunities.</p>
+        </section>
+
+
+        <!-- LANGUAGE -->
+        <section class="card">
+            <label for="language">🌐 Select Language</label>
+
+            <select id="language" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="kn">ಕನ್ನಡ</option>
+                <option value="hi">हिन्दी</option>
+                <option value="te">తెలుగు</option>
+                <option value="ta">தமிழ்</option>
+                <option value="ml">മലയാളം</option>
+            </select>
+        </section>
+
+
+        <!-- FARMER REGISTRATION -->
+        <section class="card">
+
+            <h2 id="onboardingTitle">👨‍🌾 Farmer Onboarding</h2>
+
+            <p class="small-text">
+                Register yourself to access Farm2Market services.
+            </p>
+
+            <input
+                type="text"
+                id="aadhaar"
+                placeholder="Enter Aadhaar / Phone Number"
+            >
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter Your Name"
+            >
+
+            <button onclick="registerFarmer()" id="registerBtn">
+                Register
+            </button>
+
+            <div id="registrationMessage"></div>
+
+        </section>
+
+
+        <!-- MARKETPLACE -->
+        <section class="card">
+
+            <h2 id="marketplaceTitle">🛒 Marketplace</h2>
+
+            <label>Select Crop</label>
+
+            <select id="crop">
+
+                <option value="Tomato">🍅 Tomato</option>
+                <option value="Onion">🧅 Onion</option>
+                <option value="Potato">🥔 Potato</option>
+                <option value="Rice">🌾 Rice</option>
+                <option value="Wheat">🌾 Wheat</option>
+                <option value="Banana">🍌 Banana</option>
+                <option value="Mango">🥭 Mango</option>
+                <option value="Millets">🌾 Millets</option>
+                <option value="Groundnut">🥜 Groundnut</option>
+                <option value="Cotton">🌱 Cotton</option>
+
+            </select>
+
+            <input
+                type="number"
+                id="quantity"
+                placeholder="Quantity (kg)"
+            >
+
+            <input
+                type="number"
+                id="price"
+                placeholder="Expected Price (₹/kg)"
+            >
+
+            <button onclick="listProduce()" id="listBtn">
+                🌾 List My Produce
+            </button>
+
+            <div id="marketplace"></div>
+
+        </section>
+
+
+        <!-- NEARBY MARKETS -->
+        <section class="card">
+
+            <h2 id="marketsTitle">📍 Nearby Markets</h2>
+
+            <div class="market-item">
+
+                <div>
+                    <strong>🏪 Bengaluru APMC</strong>
+                    <p>12 km away</p>
+                </div>
+
+                <button
+                    class="small-button"
+                    onclick="viewMarket('Bengaluru APMC')">
+                    View
+                </button>
+
+            </div>
+
+
+            <div class="market-item">
+
+                <div>
+                    <strong>🏪 Yeshwanthpur Market</strong>
+                    <p>18 km away</p>
+                </div>
+
+                <button
+                    class="small-button"
+                    onclick="viewMarket('Yeshwanthpur Market')">
+                    View
+                </button>
+
+            </div>
+
+
+            <div class="market-item">
+
+                <div>
+                    <strong>🏪 KR Market</strong>
+                    <p>22 km away</p>
+                </div>
+
+                <button
+                    class="small-button"
+                    onclick="viewMarket('KR Market')">
+                    View
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRICE DASHBOARD -->
+        <section class="card">
+
+            <h2 id="priceTitle">💰 Price Dashboard</h2>
+
+            <div class="price-grid">
+
+                <div class="price-box">
+                    <span>🏪</span>
+                    <h3>Mandi Price</h3>
+                    <strong>₹25/kg</strong>
+                </div>
+
+                <div class="price-box">
+                    <span>📈</span>
+                    <h3>Demand Price</h3>
+                    <strong>₹30/kg</strong>
+                </div>
+
+                <div class="price-box">
+                    <span>💡</span>
+                    <h3>Suggested Price</h3>
+                    <strong>₹32/kg</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WEATHER -->
+        <section class="card">
+
+            <h2 id="weatherTitle">🌦️ Weather & Farming Alert</h2>
+
+            <div class="alert-box">
+
+                <div class="weather-icon">
+                    🌧️
+                </div>
+
+                <div>
+                    <h3>Rain expected tomorrow</h3>
+
+                    <p>
+                        Consider harvesting ripe crops today.
+                    </p>
+                </div>
+
+            </div>
+
+            <button onclick="readAlert()">
+                🔊 Read Alert Aloud
+            </button>
+
+        </section>
+
+
+        <!-- DEMAND FORECAST -->
+        <section class="card">
+
+            <h2 id="demandTitle">📊 Demand Forecast</h2>
+
+            <div class="forecast">
+
+                <div>
+                    <span>🍅</span>
+                    <strong>Tomato</strong>
+                    <p class="high">High Demand ↑</p>
+                </div>
+
+                <div>
+                    <span>🧅</span>
+                    <strong>Onion</strong>
+                    <p class="medium">Medium Demand →</p>
+                </div>
+
+                <div>
+                    <span>🥔</span>
+                    <strong>Potato</strong>
+                    <p class="high">High Demand ↑</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOGISTICS -->
+        <section class="card">
+
+            <h2 id="logisticsTitle">🚚 Smart Logistics</h2>
+
+            <p>
+                Transport your crops safely to the selected market.
+            </p>
+
+            <button onclick="bookTransport()" id="transportBtn">
+                🚚 Book Transport
+            </button>
+
+            <button onclick="bookStorage()" id="storageBtn">
+                ❄️ Cold Storage
+            </button>
+
+        </section>
+
+
+        <!-- PAYMENTS -->
+        <section class="card">
+
+            <h2 id="paymentsTitle">💳 Digital Payments</h2>
+
+            <p>
+                Make quick and secure digital payments.
+            </p>
+
+            <button onclick="upiPayment()" id="upiBtn">
+                📱 Pay via UPI
+            </button>
+
+            <button onclick="advancePayment()" id="advanceBtn">
+                💰 Advance Booking
+            </button>
+
+        </section>
+
+
+        <!-- ADVISORY -->
+        <section class="card">
+
+            <h2 id="advisoryTitle">📢 Advisory & Alerts</h2>
+
+            <div class="advisory">
+
+                <p>
+                    🌧️ <strong>Weather:</strong>
+                    Rain expected tomorrow.
+                </p>
+
+                <p>
+                    🍅 <strong>Market:</strong>
+                    Tomatoes are currently in high demand.
+                </p>
+
+                <p>
+                    🌱 <strong>Advice:</strong>
+                    Harvest ripe vegetables before heavy rain.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRUST -->
+        <section class="card">
+
+            <h2 id="trustTitle">🔐 Trust & Transparency</h2>
+
+            <div class="trust-grid">
+
+                <div>
+                    <span>✅</span>
+                    <strong>Verified</strong>
+                    <p>Farmer verification</p>
+                </div>
+
+                <div>
+                    <span>⭐</span>
+                    <strong>4.5 / 5</strong>
+                    <p>Farmer Rating</p>
+                </div>
+
+                <div>
+                    <span>🔗</span>
+                    <strong>Secure</strong>
+                    <p>Transparent records</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AI ASSISTANT -->
+        <section class="card ai-card">
+
+            <h2 id="aiTitle">🤖 Farm2Market AI Assistant</h2>
+
+            <p>
+                Need help? Ask our farming assistant.
+            </p>
+
+            <button onclick="aiAssistant()">
+                🤖 Ask AI Assistant
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+
+        <button onclick="scrollToSection('welcomeTitle')">
+            🏠
+            <span>Home</span>
+        </button>
+
+        <button onclick="scrollToSection('marketplaceTitle')">
+            🛒
+            <span>Market</span>
+        </button>
+
+        <button onclick="scrollToSection('priceTitle')">
+            💰
+            <span>Prices</span>
+        </button>
+
+        <button onclick="scrollToSection('logisticsTitle')">
+            🚚
+            <span>Transport</span>
+        </button>
+
+    </nav>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
